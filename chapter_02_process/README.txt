@@ -56,3 +56,8 @@
 ◼ 一旦使用 mkfifo 创建了一个 FIFO, 就可以使用 open 打开它, 常见的文件 I/O 函数都可用于 fifo. 如: close, read, write, unlink 等。
 ◼ FIFO 严格遵循先进先出（First in First out），对管道及 FIFO 的读总是从开始处返回数据，对它们的写则把数据添加到末尾。
 它们不支持诸如 lseek() 等文件定位操作。
+
+7. 内存映射
+◼ 内存映射（Memory-mapped I/O）是将磁盘文件的数据映射到内存，用户通过修改内存就能修改磁盘文件。
+◼ void *mmap(void *addr, size_t length, int prot, int flags, int fd, off_t offset);
+◼ int munmap(void *addr, size_t length);
