@@ -13,8 +13,8 @@
 ◼ 动态库：GCC 进行链接时，动态库的代码不会被打包到可执行程序中
 ◼ 程序启动之后，动态库会被动态加载到内存中，通过 ldd 命令检查动态库依赖关系
 ◼ 当系统加载可执行代码时候，能够知道其所依赖的库的名字，但是还需要知道绝对路径。此时就需要系统的动态载入器来获取该绝对路径。
-对于elf格式的可执行程序，是由ld-linux.so来完成的，它先后搜索elf文件的 DT_RPATH段 -> 环境变量 LD_LIBRARY_PATH -> /etc/ld.so.cache文件列表 
--> /lib/，/usr/lib 目录找到库文件后将其载入内存。
+对于elf格式的可执行程序，是由ld-linux.so来完成的，它先后搜索elf文件的 DT_RPATH段 -> 环境变量 LD_LIBRARY_PATH -> 
+/etc/ld.so.cache文件列表 -> /lib/，/usr/lib 目录找到库文件后将其载入内存。
 # 动态库的制作
 # gcc 得到 .o 文件, 得到位置无关的代码
     gcc -c -fpic/-fPIC a.c b.c
