@@ -75,3 +75,23 @@
     const char *inet_ntop(int af, const void *src, char *dst, socklen_t size);
 ◼ 将IP地址从文本格式转换为二进制格式。
 ◼ 将IP地址从二进制格式转换为文本格式。
+
+
+10. 套接字函数总结
+◼ socket：创建一个新的套接字。
+◼ bind：将套接字绑定到本地地址和端口。
+◼ listen：将套接字标记为被动套接字，用于接受连接。
+◼ accept：接受一个传入的连接请求。
+◼ connect：在客户端套接字上发起连接。
+◼ send 和 recv：在已连接的套接字上发送和接收数据。
+◼ sendto 和 recvfrom：在数据报套接字上发送和接收数据，并获取对端地址信息。
+◼ close：关闭一个套接字。
+◼ setsockopt 和 getsockopt：设置和获取套接字选项。
+◼ inet_pton 和 inet_ntop：在文本和二进制格式之间转换IP地址。
+◼ select 和 poll：监视多个套接字的I/O事件。
+◼ shutdown：禁用套接字上的发送或接收操作。
+◼ fcntl：操作文件描述符的属性，如设置为非阻塞模式。
+◼ getaddrinfo 和 freeaddrinfo：解析主机名和服务名，获取地址信息。
+◼ ioctl：执行设备特定的I/O操作。
+◼ recvmsg 和 sendmsg：接收和发送带有辅助数据的消息。
+◼ getpeername 和 getsockname：获取对端地址和套接字绑定的本地地址。
